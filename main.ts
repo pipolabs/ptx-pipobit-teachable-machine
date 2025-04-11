@@ -24,6 +24,13 @@ namespace pipobitTeachableMachine {
         classHandler[className.toLowerCase()] = callback;
     }
 
+    //% block="Current class"
+    //% block.loc.es-ES="clase actual"
+    //% weight=5
+    export function getCurrentClass(): string {
+        return serialData;
+    }
+
     serial.onDataReceived(serial.delimiters(Delimiters.NewLine), function () {
         if (!isInitialized) {
             return;
